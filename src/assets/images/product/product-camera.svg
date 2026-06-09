@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="cam-spot" cx="0.58" cy="0.42" r="0.55">
+      <stop stop-color="#3d3d40" stop-opacity="0.9"/>
+      <stop offset="0.45" stop-color="#2d2d30" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#1a1a1c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cam-glow" cx="0.58" cy="0.42" r="0.22">
+      <stop stop-color="#c4a574" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#c4a574" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cam-floor" x1="720" y1="480" x2="720" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a1a1c" stop-opacity="0"/>
+      <stop offset="1" stop-color="#1a1a1c" stop-opacity="0.55"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="720" fill="#ede9e3"/>
+  <rect width="1440" height="720" fill="url(#cam-spot)"/>
+  <rect width="1440" height="720" fill="url(#cam-glow)"/>
+  <rect width="1440" height="720" fill="url(#cam-floor)"/>
+  <ellipse cx="835" cy="305" rx="118" ry="118" fill="#1a1a1c" opacity="0.92"/>
+  <ellipse cx="835" cy="305" rx="88" ry="88" fill="#2d2d30"/>
+  <ellipse cx="835" cy="305" rx="52" ry="52" fill="#0f0f10" stroke="#c4a574" stroke-opacity="0.45" stroke-width="2"/>
+  <ellipse cx="835" cy="305" rx="22" ry="22" fill="#1a1a1c"/>
+  <rect x="720" y="168" width="230" height="72" rx="10" fill="#1a1a1c" opacity="0.88"/>
+  <rect x="640" y="240" width="390" height="290" rx="16" fill="#2d2d30" opacity="0.75"/>
+  <rect x="668" y="268" width="334" height="234" rx="8" fill="#0f0f10" stroke="#3d3d40" stroke-width="1.5"/>
+</svg>

@@ -1,4 +1,4 @@
-/* Product Reveal — premium storytelling chapters */
+/* Product Reveal — premium editorial product presentation */
 
 .product-reveal-section {
   overflow: hidden;
@@ -8,7 +8,8 @@
   text-align: center;
   max-width: var(--container-content);
   margin-inline: auto;
-  margin-bottom: var(--space-2xl);
+  margin-bottom: clamp(var(--space-2xl), 8vw, var(--space-section-y-lg));
+  padding-bottom: var(--space-lg);
 }
 
 .product-reveal__intro-heading {
@@ -17,11 +18,14 @@
   font-weight: var(--weight-medium);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
+  max-width: 14ch;
+  margin-inline: auto;
 }
 
 .product-reveal__chapters {
   display: flex;
   flex-direction: column;
+  gap: 0;
 }
 
 /* ── Chapter base ── */
@@ -30,7 +34,7 @@
   width: 100vw;
   max-width: 100vw;
   margin-inline: calc(50% - 50vw);
-  padding-block: var(--space-section-y);
+  padding-block: clamp(var(--space-2xl), 9vw, var(--space-section-y-lg));
   padding-inline: var(--container-padding);
 }
 
@@ -61,11 +65,16 @@
 
 .product-chapter__inner {
   display: grid;
-  gap: var(--space-xl);
+  gap: clamp(var(--space-xl), 5vw, var(--space-2xl));
   align-items: center;
 }
 
 .product-chapter__copy {
+  position: relative;
+  z-index: 1;
+}
+
+.product-chapter__copy-inner {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
@@ -86,24 +95,30 @@
   font-weight: var(--weight-medium);
   line-height: var(--leading-tight);
   letter-spacing: var(--tracking-tight);
-  max-width: 16ch;
+  max-width: 14ch;
 }
 
 .product-chapter__body {
   font-size: var(--text-body-lg);
   line-height: var(--leading-loose);
   color: var(--color-text-muted);
-  max-width: 32ch;
+  max-width: 30ch;
 }
 
 .product-chapter__detail {
   font-size: var(--text-body-sm);
   line-height: var(--leading-relaxed);
   color: var(--color-text-subtle);
-  max-width: 28ch;
+  max-width: 26ch;
+  padding-top: var(--space-xs);
+  border-top: 1px solid var(--color-border-subtle);
 }
 
-/* ── Visual frame ── */
+.product-chapter--dark .product-chapter__detail {
+  border-top-color: var(--color-border-inverse);
+}
+
+/* ── Visual stage — imagery dominates ── */
 
 .product-chapter__visual {
   width: 100%;
@@ -113,43 +128,294 @@
   width: 100%;
 }
 
-.product-chapter__visual-media {
+.product-chapter__visual-stage {
+  position: relative;
   width: 100%;
-  border-radius: var(--radius-md);
 }
 
+.product-chapter__visual-media {
+  position: relative;
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  border: none;
+  border-radius: var(--radius-md);
+  background-color: var(--color-bg-stone);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: transparent;
+  font-size: 0;
+}
+
+.product-chapter__visual-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    transparent 55%,
+    rgba(26, 26, 28, 0.06) 100%
+  );
+}
+
+.product-chapter--dark .product-chapter__visual-media::after {
+  background: linear-gradient(
+    180deg,
+    transparent 40%,
+    rgba(15, 15, 16, 0.45) 100%
+  );
+}
+
+.product-chapter__visual-caption {
+  position: absolute;
+  bottom: var(--space-md);
+  left: var(--space-md);
+  z-index: 1;
+  font-size: var(--text-micro);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
+.product-chapter--dark .product-chapter__visual-caption {
+  color: var(--color-text-inverse-muted);
+}
+
+/* Placeholder art direction per chapter */
+.product-chapter__visual-media[data-asset='product-camera'] {
+  background-image: url('../assets/images/product/product-camera.svg');
+  background-position: 62% center;
+}
+
+.product-chapter__visual-media[data-asset='product-lighting'] {
+  background-image: url('../assets/images/product/product-lighting.svg');
+  background-position: 72% center;
+}
+
+.product-chapter__visual-media[data-asset='product-prints'] {
+  background-image: url('../assets/images/product/product-prints.svg');
+  background-position: center 42%;
+}
+
+.product-chapter__visual-media[data-asset='product-gallery'] {
+  background-image: url('../assets/images/product/product-gallery.svg');
+  background-position: center center;
+}
+
+.product-chapter__visual-media[data-asset='product-sharing'] {
+  background-image: url('../assets/images/product/product-sharing.svg');
+  background-position: center 46%;
+}
+
+/* Visual scale variants */
 .product-chapter__visual-media--hero {
-  aspect-ratio: 16 / 10;
-  min-height: clamp(14rem, 38vw, 26rem);
+  aspect-ratio: 21 / 9;
+  min-height: clamp(16rem, 48vw, 34rem);
 }
 
 .product-chapter__visual-media--wide {
-  aspect-ratio: 16 / 11;
-  min-height: clamp(12rem, 32vw, 22rem);
+  aspect-ratio: 5 / 3;
+  min-height: clamp(14rem, 38vw, 28rem);
 }
 
 .product-chapter__visual-media--portrait {
-  aspect-ratio: 4 / 5;
-  min-height: clamp(16rem, 50vw, 28rem);
-  max-width: 24rem;
+  aspect-ratio: 3 / 4;
+  min-height: clamp(20rem, 58vw, 36rem);
+  max-width: none;
 }
 
 .product-chapter__visual-media--square {
   aspect-ratio: 1;
-  min-height: clamp(12rem, 40vw, 20rem);
-  max-width: 20rem;
+  min-height: clamp(14rem, 44vw, 24rem);
+  max-width: none;
 }
 
-/* ── Layout: cinematic ── */
+/* ── Camera — cinematic editorial dominance ── */
+
+.product-chapter--camera {
+  padding-block: clamp(var(--space-2xl), 10vw, calc(var(--space-section-y-lg) + var(--space-lg)));
+}
+
+.product-chapter--camera .product-chapter__inner {
+  gap: clamp(var(--space-2xl), 6vw, var(--space-3xl));
+}
+
+.product-chapter--camera .product-chapter__copy {
+  text-align: center;
+  align-items: center;
+  order: 2;
+}
+
+.product-chapter--camera .product-chapter__copy-inner {
+  align-items: center;
+  max-width: var(--container-content);
+  margin-inline: auto;
+}
+
+.product-chapter--camera .product-chapter__headline,
+.product-chapter--camera .product-chapter__body,
+.product-chapter--camera .product-chapter__detail {
+  max-width: var(--container-content);
+  text-align: center;
+}
+
+.product-chapter--camera .product-chapter__detail {
+  border-top: none;
+  padding-top: 0;
+}
+
+.product-chapter--camera .product-chapter__visual {
+  order: 1;
+}
+
+.product-chapter--camera .product-chapter__visual-frame {
+  width: calc(100% + (var(--container-padding) * 2));
+  max-width: none;
+  margin-inline: calc(var(--container-padding) * -1);
+}
+
+.product-chapter--camera .product-chapter__visual-media--hero {
+  aspect-ratio: 2.35 / 1;
+  min-height: clamp(18rem, 52vw, 40rem);
+  max-width: none;
+  border-radius: 0;
+}
+
+/* ── Lighting — atmosphere, elegant asymmetry ── */
+
+.product-chapter--lighting .product-chapter__inner {
+  align-items: start;
+}
+
+.product-chapter--lighting .product-chapter__copy-inner {
+  padding-top: clamp(var(--space-lg), 4vw, var(--space-2xl));
+  max-width: 22ch;
+}
+
+.product-chapter--lighting .product-chapter__visual-frame {
+  margin-inline: calc(var(--container-padding) * -0.35) calc(var(--container-padding) * -0.75);
+  width: calc(100% + var(--container-padding) * 1.1);
+}
+
+.product-chapter--lighting .product-chapter__visual-media--wide {
+  aspect-ratio: 4 / 3;
+  min-height: clamp(16rem, 42vw, 32rem);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+/* ── Prints — hero-level immersive scale ── */
+
+.product-chapter--prints {
+  padding-block: clamp(var(--space-3xl), 11vw, calc(var(--space-section-y-lg) + var(--space-xl)));
+}
+
+.product-chapter--prints .product-chapter__inner {
+  gap: clamp(var(--space-2xl), 7vw, var(--space-3xl));
+}
+
+.product-chapter--prints .product-chapter__visual-frame {
+  width: calc(100% + (var(--container-padding) * 0.5));
+  margin-inline: calc(var(--container-padding) * -0.25);
+}
+
+.product-chapter--prints .product-chapter__visual-media--portrait {
+  aspect-ratio: 4 / 5;
+  min-height: clamp(24rem, 68vh, 44rem);
+}
+
+/* ── Gallery — premium device composition ── */
+
+.product-chapter--gallery .product-chapter__visual-frame {
+  display: flex;
+  justify-content: center;
+  padding-inline: var(--space-md);
+}
+
+.product-chapter--gallery .product-chapter__visual-stage {
+  max-width: 36rem;
+  width: 100%;
+}
+
+.product-chapter--gallery .product-chapter__visual-media--wide {
+  aspect-ratio: 4 / 3;
+  min-height: clamp(16rem, 36vw, 30rem);
+  border-radius: var(--radius-md);
+  box-shadow:
+    0 1px 0 rgba(26, 26, 28, 0.04),
+    0 24px 48px rgba(26, 26, 28, 0.08);
+}
+
+.product-chapter--gallery .product-chapter__copy-inner {
+  max-width: 24ch;
+}
+
+/* ── Sharing — dark luxury finale ── */
+
+.product-chapter--sharing {
+  padding-block: clamp(var(--space-3xl), 12vw, calc(var(--space-section-y-lg) + var(--space-2xl)));
+}
+
+.product-chapter--sharing .product-chapter__inner {
+  gap: clamp(var(--space-2xl), 7vw, var(--space-3xl));
+}
+
+.product-chapter--sharing .product-chapter__copy {
+  text-align: center;
+  order: 2;
+}
+
+.product-chapter--sharing .product-chapter__copy-inner {
+  align-items: center;
+  max-width: var(--container-content);
+  margin-inline: auto;
+}
+
+.product-chapter--sharing .product-chapter__headline,
+.product-chapter--sharing .product-chapter__body,
+.product-chapter--sharing .product-chapter__detail {
+  max-width: var(--container-content);
+  text-align: center;
+}
+
+.product-chapter--sharing .product-chapter__detail {
+  border-top-color: var(--color-border-inverse);
+}
+
+.product-chapter--sharing .product-chapter__visual {
+  order: 1;
+}
+
+.product-chapter--sharing .product-chapter__visual-frame {
+  width: calc(100% + (var(--container-padding) * 2));
+  max-width: none;
+  margin-inline: calc(var(--container-padding) * -1);
+}
+
+.product-chapter--sharing .product-chapter__visual-media--hero {
+  aspect-ratio: 2.4 / 1;
+  min-height: clamp(20rem, 50vw, 42rem);
+  border-radius: 0;
+}
+
+/* ── Layout: cinematic (shared) ── */
 
 .product-chapter--cinematic .product-chapter__inner {
-  gap: var(--space-2xl);
+  gap: clamp(var(--space-2xl), 6vw, var(--space-3xl));
 }
 
 .product-chapter--cinematic .product-chapter__copy {
   text-align: center;
-  align-items: center;
   order: 2;
+}
+
+.product-chapter--cinematic .product-chapter__copy-inner {
+  align-items: center;
+  margin-inline: auto;
 }
 
 .product-chapter--cinematic .product-chapter__headline,
@@ -170,23 +436,26 @@
 
 .product-chapter--cinematic .product-chapter__visual-media--hero {
   aspect-ratio: 21 / 9;
-  min-height: clamp(14rem, 42vw, 30rem);
+  min-height: clamp(16rem, 48vw, 36rem);
   max-width: none;
   border-radius: 0;
-  border-inline: none;
-}
-
-.product-chapter--cinematic.product-chapter--dark .product-chapter__visual-media {
-  border-color: var(--color-border-inverse);
 }
 
 /* ── Layout: split ── */
 
 @media (min-width: 48rem) {
+  .product-chapter {
+    padding-inline: var(--container-padding-lg);
+  }
+
   .product-chapter__inner {
     grid-template-columns: 1fr 1fr;
-    gap: var(--space-2xl);
+    gap: clamp(var(--space-2xl), 5vw, var(--space-3xl));
     align-items: center;
+  }
+
+  .product-chapter__headline {
+    font-size: var(--text-display-lg);
   }
 
   .product-chapter--split .product-chapter__visual {
@@ -204,17 +473,63 @@
   .product-chapter--split-reverse .product-chapter__visual {
     order: 2;
   }
+
+  /* Lighting asymmetry — visual dominates */
+  .product-chapter--lighting .product-chapter__inner {
+    grid-template-columns: 0.72fr 1.28fr;
+    align-items: center;
+  }
+
+  .product-chapter--lighting .product-chapter__copy {
+    order: 1;
+    padding-right: var(--space-lg);
+  }
+
+  .product-chapter--lighting .product-chapter__visual {
+    order: 2;
+  }
+
+  .product-chapter--lighting .product-chapter__visual-frame {
+    margin-inline: calc(var(--container-padding-lg) * -0.5) calc(var(--container-padding-lg) * -1);
+    width: calc(100% + var(--container-padding-lg) * 1.5);
+  }
+
+  /* Gallery — device-forward split */
+  .product-chapter--gallery .product-chapter__inner {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+  }
+
+  .product-chapter--gallery .product-chapter__visual-stage {
+    max-width: none;
+  }
+
+  .product-chapter--gallery .product-chapter__visual-media--wide {
+    min-height: clamp(18rem, 32vw, 34rem);
+  }
+
+  /* Camera & sharing bleed adjustments */
+  .product-chapter--camera .product-chapter__visual-frame,
+  .product-chapter--cinematic .product-chapter__visual-frame,
+  .product-chapter--sharing .product-chapter__visual-frame {
+    width: calc(100% + (var(--container-padding-lg) * 2));
+    margin-inline: calc(var(--container-padding-lg) * -1);
+  }
 }
 
-/* ── Layout: immersive ── */
+/* ── Layout: immersive (prints) ── */
 
 .product-chapter--immersive .product-chapter__inner {
-  gap: var(--space-2xl);
+  gap: clamp(var(--space-2xl), 7vw, var(--space-3xl));
 }
 
 .product-chapter--immersive .product-chapter__copy {
   text-align: center;
+}
+
+.product-chapter--immersive .product-chapter__copy-inner {
   align-items: center;
+  margin-inline: auto;
 }
 
 .product-chapter--immersive .product-chapter__headline,
@@ -223,27 +538,29 @@
   max-width: var(--container-content);
 }
 
-.product-chapter--immersive .product-chapter__visual-frame {
-  margin-inline: auto;
-}
-
 @media (min-width: 64rem) {
   .product-chapter--immersive .product-chapter__inner {
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.35fr 0.65fr;
     align-items: end;
   }
 
   .product-chapter--immersive .product-chapter__copy {
     text-align: left;
-    align-items: flex-start;
     order: 2;
-    padding-bottom: var(--space-lg);
+    padding-bottom: clamp(var(--space-xl), 4vw, var(--space-2xl));
+  }
+
+  .product-chapter--immersive .product-chapter__copy-inner {
+    align-items: flex-start;
+    margin-inline: 0;
+    max-width: 22ch;
   }
 
   .product-chapter--immersive .product-chapter__headline,
   .product-chapter--immersive .product-chapter__body,
   .product-chapter--immersive .product-chapter__detail {
     max-width: 22ch;
+    text-align: left;
   }
 
   .product-chapter--immersive .product-chapter__visual {
@@ -251,51 +568,32 @@
   }
 
   .product-chapter--immersive .product-chapter__visual-frame {
-    margin-inline: 0;
+    margin-inline: calc(var(--container-padding-lg) * -0.35);
+    width: calc(100% + var(--container-padding-lg) * 0.7);
   }
 
-  .product-chapter--immersive .product-chapter__visual-media--portrait {
-    max-width: none;
-    min-height: clamp(20rem, 36vw, 32rem);
-  }
-}
-
-/* ── Chapter rhythm & spacing ── */
-
-.product-chapter + .product-chapter {
-  margin-top: 0;
-}
-
-@media (min-width: 48rem) {
-  .product-chapter {
-    padding-inline: var(--container-padding-lg);
-  }
-
-  .product-chapter--cinematic .product-chapter__visual-frame {
-    width: calc(100% + (var(--container-padding-lg) * 2));
-    margin-inline: calc(var(--container-padding-lg) * -1);
-  }
-
-  .product-reveal__intro {
-    margin-bottom: clamp(var(--space-2xl), 6vw, var(--space-section-y-lg));
-  }
-
-  .product-chapter {
-    padding-block: clamp(var(--space-2xl), 7vw, var(--space-section-y-lg));
-  }
-
-  .product-chapter__headline {
-    font-size: var(--text-display-lg);
+  .product-chapter--prints .product-chapter__visual-media--portrait {
+    min-height: clamp(28rem, 72vh, 48rem);
   }
 }
+
+/* ── Wide viewport refinements ── */
 
 @media (min-width: 88rem) {
-  .product-chapter--cinematic .product-chapter__visual-media--hero {
-    min-height: clamp(18rem, 34vw, 36rem);
-  }
-
   .product-chapter__inner {
     max-width: var(--container-wide);
     margin-inline: auto;
+  }
+
+  .product-chapter--camera .product-chapter__visual-media--hero {
+    min-height: clamp(22rem, 44vw, 44rem);
+  }
+
+  .product-chapter--sharing .product-chapter__visual-media--hero {
+    min-height: clamp(24rem, 46vw, 46rem);
+  }
+
+  .product-chapter--cinematic .product-chapter__visual-media--hero {
+    min-height: clamp(20rem, 38vw, 40rem);
   }
 }

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 720" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="share-spot" cx="0.5" cy="0.48" r="0.45">
+      <stop stop-color="#2d2d30" stop-opacity="0.9"/>
+      <stop offset="0.55" stop-color="#1a1a1c" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#1a1a1c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="share-gold" cx="0.5" cy="0.42" r="0.18">
+      <stop stop-color="#c4a574" stop-opacity="0.32"/>
+      <stop offset="1" stop-color="#c4a574" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="share-vignette" x1="720" y1="0" x2="720" y2="720" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1a1a1c" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0f0f10" stop-opacity="0.65"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="720" fill="#1a1a1c"/>
+  <rect width="1440" height="720" fill="url(#share-spot)"/>
+  <rect width="1440" height="720" fill="url(#share-gold)"/>
+  <rect width="1440" height="720" fill="url(#share-vignette)"/>
+  <rect x="620" y="200" width="200" height="200" rx="12" fill="#faf8f5" opacity="0.95"/>
+  <rect x="636" y="216" width="168" height="168" rx="4" fill="#1a1a1c"/>
+  <rect x="652" y="232" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="684" y="232" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="716" y="232" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="748" y="232" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="652" y="264" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="684" y="264" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="716" y="264" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="748" y="264" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="652" y="296" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="684" y="296" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="716" y="296" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="748" y="296" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="652" y="328" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="684" y="328" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="716" y="328" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="748" y="328" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="652" y="360" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="684" y="360" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="716" y="360" width="24" height="24" rx="2" fill="#faf8f5"/>
+  <rect x="748" y="360" width="24" height="24" rx="2" fill="#faf8f5"/>
+</svg>

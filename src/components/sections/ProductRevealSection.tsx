@@ -98,18 +98,26 @@ function ProductChapterBlock({ chapter }: { chapter: ProductChapter }) {
     >
       <div className="product-chapter__inner" data-product-chapter-inner>
         <div className="product-chapter__copy" data-product-copy>
-          <p className="product-chapter__eyebrow">{chapter.eyebrow}</p>
-          <h3 id={`product-chapter-${chapter.id}-heading`} className="product-chapter__headline">
-            {chapter.headline}
-          </h3>
-          <p className="product-chapter__body">{chapter.body}</p>
-          <p className="product-chapter__detail">{chapter.detail}</p>
+          <div className="product-chapter__copy-inner">
+            <p className="product-chapter__eyebrow">{chapter.eyebrow}</p>
+            <h3 id={`product-chapter-${chapter.id}-heading`} className="product-chapter__headline">
+              {chapter.headline}
+            </h3>
+            <p className="product-chapter__body">{chapter.body}</p>
+            <p className="product-chapter__detail">{chapter.detail}</p>
+          </div>
         </div>
 
         <div className="product-chapter__visual" data-product-visual>
           <div className="product-chapter__visual-frame">
-            <div className={visualClass} data-asset={chapter.asset}>
-              <span>{chapter.visualLabel}</span>
+            <div className="product-chapter__visual-stage">
+              <div
+                className={visualClass}
+                data-asset={chapter.asset}
+                role="img"
+                aria-label={chapter.visualLabel}
+              />
+              <span className="product-chapter__visual-caption">{chapter.visualLabel}</span>
             </div>
           </div>
         </div>

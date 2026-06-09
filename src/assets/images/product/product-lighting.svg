@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" fill="none" aria-hidden="true">
+  <defs>
+    <radialGradient id="light-warm" cx="0.72" cy="0.38" r="0.62">
+      <stop stop-color="#faf8f5" stop-opacity="0.95"/>
+      <stop offset="0.35" stop-color="#f3ece2" stop-opacity="0.7"/>
+      <stop offset="0.7" stop-color="#e8dfd2" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#ddd8d1" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="light-accent" cx="0.68" cy="0.32" r="0.28">
+      <stop stop-color="#c4a574" stop-opacity="0.28"/>
+      <stop offset="1" stop-color="#c4a574" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="light-fade" x1="0" y1="400" x2="1200" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f3f0eb"/>
+      <stop offset="0.55" stop-color="#f3f0eb" stop-opacity="0.4"/>
+      <stop offset="1" stop-color="#f3f0eb" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="#f3f0eb"/>
+  <rect width="1200" height="800" fill="url(#light-warm)"/>
+  <rect width="1200" height="800" fill="url(#light-accent)"/>
+  <rect width="1200" height="800" fill="url(#light-fade)"/>
+  <path d="M780 120 L920 120 L860 680 L720 680 Z" fill="#e8e4df" opacity="0.55"/>
+  <path d="M820 160 L880 160 L850 640 L790 640 Z" fill="#faf8f5" opacity="0.7"/>
+  <ellipse cx="850" cy="200" rx="140" ry="48" fill="#faf8f5" opacity="0.85"/>
+  <ellipse cx="850" cy="200" rx="90" ry="28" fill="#c4a574" opacity="0.18"/>
+</svg>
