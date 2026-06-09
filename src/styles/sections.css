@@ -10,39 +10,6 @@
   }
 }
 
-.product-reveal__showcase {
-  margin-bottom: var(--space-xl);
-}
-
-.product-reveal__features {
-  display: grid;
-  gap: var(--space-lg);
-}
-
-.product-reveal__feature-title {
-  font-size: var(--text-subheading-md);
-  font-weight: var(--weight-medium);
-  margin-bottom: var(--space-xs);
-}
-
-.product-reveal__feature-description {
-  font-size: var(--text-body-sm);
-  line-height: var(--leading-relaxed);
-  color: var(--color-text-muted);
-}
-
-@media (min-width: 48rem) {
-  .product-reveal__features {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-xl) var(--space-lg);
-  }
-
-  .product-reveal__feature:last-child {
-    grid-column: span 2;
-    max-width: 50%;
-  }
-}
-
 .steps-grid {
   display: grid;
   gap: var(--space-lg);
