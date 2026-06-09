@@ -1,0 +1,30 @@
+:root {
+  --container-xs: 20rem;
+  --container-sm: 36rem;
+  --container-md: 48rem;
+  --container-lg: 64rem;
+  --container-xl: 72rem;
+  --container-2xl: 80rem;
+
+  --container-max: var(--container-xl);
+  --container-narrow: var(--container-md);
+  --container-wide: var(--container-2xl);
+  --container-content: 38rem;
+  --container-prose: 42rem;
+
+  --container-padding: var(--space-6);
+  --container-padding-lg: var(--space-10);
+}
+
+@media (min-width: 48rem) {
+  :root {
+    --container-padding: var(--space-10);
+    --container-padding-lg: var(--space-12);
+  }
+}
+
+@media (min-width: 88rem) {
+  :root {
+    --container-max: var(--container-2xl);
+  }
+}

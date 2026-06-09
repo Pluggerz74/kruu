@@ -1,0 +1,48 @@
+:root {
+  /* Background — warm, layered neutrals */
+  --color-bg-ivory: #faf8f5;
+  --color-bg-linen: #f3f0eb;
+  --color-bg-stone: #e8e4df;
+  --color-bg-warm: #ede9e3;
+  --color-bg-muted: #ddd8d1;
+
+  /* Text — deep, readable hierarchy */
+  --color-text-primary: #1a1a1c;
+  --color-text-secondary: #2d2d30;
+  --color-text-muted: #6b6b70;
+  --color-text-subtle: #8e8e93;
+  --color-text-inverse: #faf8f5;
+  --color-text-inverse-muted: rgba(250, 248, 245, 0.72);
+
+  /* Accent — champagne gold */
+  --color-accent: #c4a574;
+  --color-accent-hover: #b89660;
+  --color-accent-muted: #d4bc94;
+  --color-accent-subtle: rgba(196, 165, 116, 0.12);
+  --color-accent-border: rgba(196, 165, 116, 0.35);
+
+  /* Borders & dividers */
+  --color-border-subtle: rgba(26, 26, 28, 0.06);
+  --color-border-default: #d4cfc7;
+  --color-border-strong: #c9c3bb;
+  --color-border-inverse: rgba(250, 248, 245, 0.18);
+
+  /* Surfaces */
+  --color-surface-raised: #ffffff;
+  --color-surface-sunken: var(--color-bg-stone);
+  --color-surface-overlay: rgba(26, 26, 28, 0.04);
+
+  /* Focus & interaction */
+  --color-focus-ring: rgba(196, 165, 116, 0.45);
+  --color-focus-ring-inverse: rgba(250, 248, 245, 0.5);
+
+  /* Semantic aliases — backward compatibility */
+  --color-ivory: var(--color-bg-ivory);
+  --color-stone: var(--color-bg-stone);
+  --color-stone-dark: var(--color-border-strong);
+  --color-gold: var(--color-accent);
+  --color-gold-muted: var(--color-accent-muted);
+  --color-graphite: var(--color-text-primary);
+  --color-graphite-soft: var(--color-text-secondary);
+  --color-text: var(--color-text-primary);
+}

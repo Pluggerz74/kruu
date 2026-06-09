@@ -1,0 +1,88 @@
+/* Surface system — cards, panels, content backgrounds */
+
+.surface {
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+}
+
+.surface--flat {
+  box-shadow: var(--elevation-0);
+}
+
+.surface--raised {
+  box-shadow: var(--elevation-2);
+}
+
+.surface--elevated {
+  box-shadow: var(--elevation-3);
+}
+
+.surface--sunken {
+  background-color: var(--color-surface-sunken);
+  border-color: transparent;
+  box-shadow: none;
+}
+
+.surface--linen {
+  background-color: var(--color-bg-linen);
+  border-color: var(--color-border-subtle);
+}
+
+.surface--stone {
+  background-color: var(--color-bg-stone);
+  border-color: transparent;
+}
+
+.surface--dark {
+  background-color: var(--color-text-primary);
+  border-color: var(--color-border-inverse);
+  color: var(--color-text-inverse);
+}
+
+.surface-card {
+  padding: var(--space-6);
+  background-color: var(--color-surface-raised);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elevation-1);
+}
+
+.surface-panel {
+  padding: var(--space-8);
+  background-color: var(--color-bg-linen);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.surface-content {
+  padding: var(--space-6);
+  background-color: var(--color-bg-ivory);
+  border-radius: var(--radius-md);
+}
+
+.bg-ivory {
+  background-color: var(--color-bg-ivory);
+}
+
+.bg-linen {
+  background-color: var(--color-bg-linen);
+}
+
+.bg-stone {
+  background-color: var(--color-bg-stone);
+}
+
+.bg-warm {
+  background-color: var(--color-bg-warm);
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border-default);
+  margin: 0;
+}
+
+.divider--subtle {
+  border-top-color: var(--color-border-subtle);
+}
