@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react'
+import { forwardRef, type ReactNode } from 'react'
 import { Container } from './Container'
 
 type SectionProps = {
@@ -10,16 +10,13 @@ type SectionProps = {
   ariaLabelledBy?: string
 }
 
-export function Section({
-  id,
-  children,
-  variant = 'light',
-  narrow = false,
-  className = '',
-  ariaLabelledBy,
-}: SectionProps) {
+export const Section = forwardRef<HTMLElement, SectionProps>(function Section(
+  { id, children, variant = 'light', narrow = false, className = '', ariaLabelledBy },
+  ref,
+) {
   return (
     <section
+      ref={ref}
       id={id}
       className={`section section--${variant} ${className}`.trim()}
       aria-labelledby={ariaLabelledBy}
@@ -27,4 +24,4 @@ export function Section({
       <Container narrow={narrow}>{children}</Container>
     </section>
   )
-}
+})

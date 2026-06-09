@@ -1,16 +1,24 @@
 import boothSilhouette from '../../assets/images/hero/booth-silhouette.svg'
 import { heroContent, siteMeta, trustSignals } from '../../data/content'
+import { useHeroParallax } from '../../hooks/useHeroParallax'
 import { Button } from '../ui/Button'
 import { Section } from '../layout/Section'
 
 const heroTrustSignals = trustSignals.slice(0, 3)
 
 export function HeroSection() {
+  const stageRef = useHeroParallax<HTMLDivElement>()
+
   return (
     <Section id="hero" className="hero-section" ariaLabelledBy="hero-heading">
       <div className="hero-section__inner">
         <div className="hero-section__stage-wrapper">
-          <div className="hero-section__stage" data-hero-3d-placeholder>
+          <div
+            ref={stageRef}
+            className="hero-section__stage"
+            data-hero-3d-placeholder
+            data-hero-stage
+          >
             <div className="hero-section__layer hero-section__layer--ambient" aria-hidden="true" />
             <div className="hero-section__layer hero-section__layer--spotlight" aria-hidden="true" />
             <div className="hero-section__layer hero-section__layer--vignette" aria-hidden="true" />

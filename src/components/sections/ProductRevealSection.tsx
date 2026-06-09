@@ -1,3 +1,4 @@
+import { useScrollReveal } from '../../hooks/useScrollReveal'
 import { Section } from '../layout/Section'
 
 type ProductChapter = {
@@ -97,7 +98,11 @@ function ProductChapterBlock({ chapter }: { chapter: ProductChapter }) {
       aria-labelledby={`product-chapter-${chapter.id}-heading`}
     >
       <div className="product-chapter__inner" data-product-chapter-inner>
-        <div className="product-chapter__copy" data-product-copy>
+        <div
+          className="product-chapter__copy motion-reveal motion-reveal--copy"
+          data-product-copy
+          data-scroll-reveal
+        >
           <div className="product-chapter__copy-inner">
             <p className="product-chapter__eyebrow">{chapter.eyebrow}</p>
             <h3 id={`product-chapter-${chapter.id}-heading`} className="product-chapter__headline">
@@ -108,7 +113,11 @@ function ProductChapterBlock({ chapter }: { chapter: ProductChapter }) {
           </div>
         </div>
 
-        <div className="product-chapter__visual" data-product-visual>
+        <div
+          className="product-chapter__visual motion-reveal motion-reveal--visual"
+          data-product-visual
+          data-scroll-reveal
+        >
           <div className="product-chapter__visual-frame">
             <div className="product-chapter__visual-stage">
               <div
@@ -127,15 +136,24 @@ function ProductChapterBlock({ chapter }: { chapter: ProductChapter }) {
 }
 
 export function ProductRevealSection() {
+  const revealRef = useScrollReveal<HTMLElement>()
+
   return (
     <Section
+      ref={revealRef}
       id="product"
       className="product-reveal-section section--spacious"
       ariaLabelledBy="product-heading"
     >
       <header className="product-reveal__intro">
-        <p className="section-eyebrow">The product</p>
-        <h2 id="product-heading" className="product-reveal__intro-heading">
+        <p className="section-eyebrow motion-reveal motion-reveal--intro" data-scroll-reveal>
+          The product
+        </p>
+        <h2
+          id="product-heading"
+          className="product-reveal__intro-heading motion-reveal motion-reveal--intro-delayed"
+          data-scroll-reveal
+        >
           Crafted to be remembered.
         </h2>
       </header>

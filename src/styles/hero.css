@@ -87,7 +87,6 @@
   align-items: center;
   justify-content: center;
   width: clamp(10rem, 28vw, 16rem);
-  transform: rotateX(4deg) translateY(-2%);
   transform-style: preserve-3d;
 }
 
@@ -215,7 +214,6 @@
   letter-spacing: var(--tracking-wide);
   text-decoration: none;
   border-radius: var(--radius-sm);
-  transition: var(--transition-color);
 }
 
 .hero-section__cta--secondary:hover {
