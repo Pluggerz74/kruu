@@ -128,35 +128,91 @@ export const appFeatures = [
   },
 ]
 
+export const trustContent = {
+  eyebrow: 'Trust',
+  headline: 'A reputation built one celebration at a time.',
+  lede: 'From intimate gatherings to grand celebrations, hosts across the country rely on KRUU for an experience that simply works — beautifully.',
+}
+
 export const trustSignals = [
-  { id: 'events', value: '1,000+', label: 'Events captured' },
-  { id: 'reviews', value: '4.8', label: 'Average rating' },
-  { id: 'shipping', value: 'Nationwide', label: 'Delivery included' },
-  { id: 'support', value: 'Dedicated', label: 'Support team' },
+  { id: 'events', value: '1,000+', label: 'Events served', detail: 'Across the Continental U.S.' },
+  { id: 'reviews', value: '4.8', label: 'Average rating', detail: 'Consistently rated by hosts' },
+  { id: 'shipping', value: 'Nationwide', label: 'Delivery included', detail: 'Prepaid shipping both ways' },
+  { id: 'support', value: 'Dedicated', label: 'Support team', detail: 'Before, during, and after' },
 ]
 
 export const trustQuotes = [
   {
     id: 'quote-1',
     text: 'Our guests could not stop talking about the booth. The photos felt like they belonged in a magazine.',
-    attribution: 'Wedding client',
+    attribution: 'Wedding host',
+    event: 'Wedding',
   },
   {
     id: 'quote-2',
     text: 'Setup took ten minutes. We had prints in hand before dessert. Absolutely seamless.',
     attribution: 'Corporate event planner',
+    event: 'Corporate event',
+  },
+  {
+    id: 'quote-3',
+    text: 'The gallery arrived within a week. We still look through the photos months later.',
+    attribution: 'Birthday celebration host',
+    event: 'Milestone birthday',
+  },
+]
+
+export const pricingSharedInclusions = [
+  'Nationwide delivery & return shipping',
+  'Customizable photo templates',
+  'Private digital gallery',
+  'Full-day rental — no hourly limits',
+]
+
+export const pricingPackages = [
+  {
+    id: 'lite',
+    name: 'Lite',
+    descriptor: 'Digital-first celebrations',
+    highlights: [
+      'Unlimited digital captures',
+      'Private online gallery',
+      'QR sharing for guests',
+    ],
+  },
+  {
+    id: 'basic',
+    name: 'Basic',
+    descriptor: 'Digital plus on-site printing',
+    highlights: [
+      'Everything in Lite',
+      'On-site print delivery',
+      'Premium props included',
+    ],
+  },
+  {
+    id: 'premium',
+    name: 'Premium',
+    descriptor: 'The complete experience',
+    highlights: [
+      'Everything in Basic',
+      'Enhanced print package',
+      'Priority support line',
+    ],
   },
 ]
 
 export const pricingContent = {
-  headline: 'Your celebration, your way.',
-  body: 'Transparent, all-inclusive pricing. No hidden fees, no hourly surprises. Choose the experience that fits your event — from digital-only to full premium with on-site printing.',
+  headline: 'Clear value. No surprises.',
+  body: 'Every package is flat-rate and all-inclusive. Choose the experience that fits your celebration — each one includes delivery, setup support, and gallery access.',
   cta: 'View packages & book',
-  note: 'Flat-rate rentals include nationwide shipping, customizable templates, and access to the KRUU app gallery.',
+  note: 'Transparent pricing with no hidden fees. Enter your date to see availability and confirm your package.',
 }
 
 export const finalCtaContent = {
-  headline: 'Ready to create something unforgettable?',
-  body: 'Your next celebration deserves more than ordinary. Reserve your KRUU experience today.',
+  eyebrow: 'Your celebration',
+  headline: 'When the details are handled, the decision is simple.',
+  body: 'You have already imagined the evening. KRUU exists to preserve it — with the same care we bring to every celebration we serve.',
   cta: 'Check availability',
+  reassurance: 'Reserve your date in minutes. No obligation until you are confirmed.',
 }

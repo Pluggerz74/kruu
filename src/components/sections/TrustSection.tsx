@@ -1,35 +1,45 @@
-import { trustQuotes, trustSignals } from '../../data/content'
+import { trustContent, trustQuotes, trustSignals } from '../../data/content'
+import { useScrollReveal } from '../../hooks/useScrollReveal'
+import { TrustReviews } from '../trust/TrustReviews'
+import { TrustStatGrid } from '../trust/TrustStatGrid'
 import { Section } from '../layout/Section'
 
 export function TrustSection() {
+  const revealRef = useScrollReveal<HTMLElement>()
+
   return (
-    <Section id="trust" variant="stone" ariaLabelledBy="trust-heading">
-      <header className="section-header">
-        <p className="section-eyebrow">Trust</p>
-        <h2 id="trust-heading" className="section-heading">
-          Celebrations across the nation.
+    <Section
+      ref={revealRef}
+      id="trust"
+      variant="stone"
+      className="trust-section section--spacious"
+      ariaLabelledBy="trust-heading"
+    >
+      <header className="trust-section__header section-header section-header--left">
+        <p className="section-eyebrow motion-reveal motion-reveal--intro" data-scroll-reveal>
+          {trustContent.eyebrow}
+        </p>
+        <h2
+          id="trust-heading"
+          className="section-heading motion-reveal motion-reveal--intro-delayed"
+          data-scroll-reveal
+        >
+          {trustContent.headline}
         </h2>
+        <p className="trust-section__lede motion-reveal motion-reveal--copy" data-scroll-reveal>
+          {trustContent.lede}
+        </p>
       </header>
 
-      <ul className="trust-stats">
-        {trustSignals.map((signal) => (
-          <li key={signal.id} className="trust-stats__item">
-            <span className="trust-stats__value">{signal.value}</span>
-            <span className="trust-stats__label">{signal.label}</span>
-          </li>
-        ))}
-      </ul>
+      <div className="motion-reveal motion-reveal--copy" data-scroll-reveal>
+        <TrustStatGrid signals={trustSignals} />
+      </div>
 
-      <ul className="trust-quotes">
-        {trustQuotes.map((quote) => (
-          <li key={quote.id} className="trust-quotes__item">
-            <blockquote>
-              <p className="trust-quotes__text">&ldquo;{quote.text}&rdquo;</p>
-              <footer className="trust-quotes__attribution">— {quote.attribution}</footer>
-            </blockquote>
-          </li>
-        ))}
-      </ul>
+      <hr className="trust-section__divider divider divider--subtle" aria-hidden="true" />
+
+      <div className="motion-reveal motion-reveal--copy" data-scroll-reveal>
+        <TrustReviews quotes={trustQuotes} label="From our hosts" />
+      </div>
     </Section>
   )
 }
