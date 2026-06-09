@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 420" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="booth-body" x1="160" y1="80" x2="160" y2="380" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2d2d30"/>
+      <stop offset="1" stop-color="#1a1a1c"/>
+    </linearGradient>
+    <linearGradient id="booth-accent" x1="160" y1="200" x2="160" y2="340" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c4a574" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#c4a574" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- Camera housing -->
+  <rect x="118" y="48" width="84" height="52" rx="8" fill="#1a1a1c"/>
+  <circle cx="160" cy="74" r="18" fill="#2d2d30" stroke="#c4a574" stroke-width="1.5" stroke-opacity="0.5"/>
+  <circle cx="160" cy="74" r="10" fill="#1a1a1c"/>
+  <!-- Main body -->
+  <rect x="72" y="100" width="176" height="260" rx="12" fill="url(#booth-body)"/>
+  <!-- Accent strip -->
+  <rect x="72" y="220" width="176" height="2" fill="url(#booth-accent)"/>
+  <!-- Viewport -->
+  <rect x="96" y="130" width="128" height="160" rx="6" fill="#0f0f10" stroke="#3d3d40" stroke-width="1"/>
+  <!-- Base -->
+  <rect x="56" y="360" width="208" height="16" rx="4" fill="#2d2d30"/>
+</svg>
